@@ -117,7 +117,21 @@ def agregarEmpleado():
         if request.method=='POST':
 
             usuario= Empleado(nombre=request.form['nombre'],
-                            correo=request.form['correo'])
+                            apellidos=request.form['apellidos'],
+                            cedula=request.form['cedula'],
+                            password=request.form['password'],
+                            Genero=request.form['genero'],
+                            direccion=request.form['direccion'],
+                            telefono=request.form['telefono'],
+                            celular=request.form['celular'],
+                            correo=request.form['correo'],
+                            correoInstitucional=request.form['correoInstitucional'],
+                            idContrato=request.form['tipoContrato'],
+                            fechaInicioContrato=request.form['correo'],
+                            fechaFinContrato=request.form['correo'],
+                            salario=request.form['salario'],
+                            idRol=request.form['idRol'],
+                            idDependencia=request.form['dependencia'])
             
             db.session.add(usuario)
             db.session.commit()

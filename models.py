@@ -9,6 +9,7 @@ class Empleado(db.Model):
     nombre = db.Column(db.String)
     apellidos = db.Column(db.String)
     cedula = db.Column(db.Integer, nullable=False)
+    password = db.Column(db.String(66))
     Genero = db.Column(db.String(10))
     fecha_nacimiento = db.Column(db.DateTime)
     direccion = db.Column(db.String(100))
@@ -21,6 +22,7 @@ class Empleado(db.Model):
     fechaFinContrato = db.Column(db.DateTime)
     idRol = db.Column(db.Integer, nullable=False) #llave foranea
     idDependencia = db.Column(db.Integer, nullable=False) #llave foranea
+    salario = db.Column(db.Integer)
 
     def __init__(self, nombre, correo):
         self.nombre = nombre

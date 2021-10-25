@@ -63,14 +63,20 @@
                             </select>
                         </div>
                         <div>
-                            <select name="Cargo" id="Cargo">
+                            <select name="Cargo" id="cargo">
                                 <option disabled selected>Cargo</option>
                                 <option value="Gerente">Gerente</option>
                                 <option value="Contador">Contador</option>
                                 <option value="Jefe de Mercadeo">Jefe de Mercadeo</option>
                                 <option value="Secretaria">Secretaria</option>
                             </select>
-                            <input type="text" name="salario" placeholder="Salario">
+                            <select name="idRol" id="idRol">
+                                <option disabled selected>Cargo</option>
+                                <option value="1">Super admin</option>
+                                <option value="2">Administrador</option>
+                                <option value="3">Empleado</option>
+                            </select>
+                            <input type="text" name="salario" id="salario" placeholder="Salario">
                         </div>
                         <div>
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
