@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block title %}Busqueda Empleados{% endblock %}
+
+{% block body %}
+
+    <main>
+        <div class="descripcion-pagina">
+            <div>
+                <h1>Gestionar Empleados</h1>
+            </div>
+            <div>
+                <p>Gestiona los datos de todos los empleados.</p>
+            </div>
+        </div>
+        <div class="contenido-pagina">
+            <div class="contenedor-busqueda-empleado">
+                <div>
+                    <input type="text" name="busqueda" placeholder="Busqueda">
+                </div>
+                <div>
+                    <select name="filtrar" id="filtrar">
+                        <option disabled selected>Filtrar Por</option>
+                        <option value="1">Filtro 1</option>
+                        <option value="2">Filtro 2</option>
+                        <option value="3">Filtro 3</option>
+                    </select>
+                </div>
+                <div>
+                    <table id="tbl-empleados">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>nombre</th>
+                                <th>apellidos</th>
+                                <th>cedula</th>
+                                <th>correo Institucional</th>
+                                <th>dependencia</th>
+                                <th>cargo</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}

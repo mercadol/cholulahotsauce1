@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block title %}Generar Reporte{% endblock %}
+
+    {% block body %}
+    
+
+    <main>
+        <div class="descripcion-pagina">
+            <div>
+                <h1>Generar Reporte</h1>
+            </div>
+            <div>
+                <p>Genere el reporte mensual del empleado.</p>
+            </div>
+        </div>
+        <div class="contenido-pagina">
+            <div class="contenedor-generar-reporte">
+                <div>
+                    <select name="puntualidad-llegada" id="puntualidad-llegada">
+                        <option disabled selected>Puntualidad Llegada</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="puntualidad-entrega-trabajos" id="puntualidad-entrega-trabajos">
+                        <option disabled selected>Puntualidad Entrega Trabajos</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="desempeno-general" id="desempeno-general">
+                        <option disabled selected>Desempeño General</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="trato-companeros" id="trato-companeros">
+                        <option disabled selected>Trato Compañeros</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea name="descripcion-servicio" placeholder="Descripción"></textarea>
+                </div>
+                <div>
+                    <input type="button" value="Generaer Reporte">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% endblock %}

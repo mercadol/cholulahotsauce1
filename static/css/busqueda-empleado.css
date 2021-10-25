@@ -1,0 +1,160 @@
+.contenedor-busqueda-empleado {
+
+    display: grid;
+    grid-template-columns: 1fr 0.35fr;
+    column-gap: 5%;
+    row-gap: calc(1.5em + 1.5vw);
+
+}
+
+.contenedor-busqueda-empleado > div:last-child {
+
+    grid-column: 1/-1;
+
+}
+
+table {
+    
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+
+}
+
+table thead {
+
+    background-color: black;
+
+}
+
+/*
+table thead tr {
+
+    Estilos aquí.
+
+}
+*/
+
+table thead tr th {
+    
+    padding: 12px; 
+    font-family: NTF-Grand-Light;
+    font-size: calc(0.5em + 0.5vw);
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: capitalize; 
+    background: black; 
+    
+}
+
+/*
+table tbody {
+
+    Estilos aquí.
+
+}
+*/
+
+/*
+table tbody tr {
+    
+    Estilos aquí.
+
+}
+*/
+
+table tbody tr:nth-of-type(2n) {
+    
+    color: black;
+    background-color: #F0F0F0;
+    
+}
+
+table tbody tr td {
+    
+    padding: 12px;
+    font-family: Klavika-light;
+    font-size: calc(0.44em + 0.44vw);
+    color: #9E9E9E; 
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid #D2D2D2;
+    overflow-x: hidden;
+
+}
+
+table tbody tr td.numeric {
+
+    text-align: right;
+
+}
+
+table tbody tr td ul.actions li {  
+
+    list-style: none;
+    display: inline;
+    margin-right: 4%;
+    
+
+}
+
+table tbody tr td ul.actions li a{  
+    
+    text-transform: capitalize;
+    text-decoration: none;
+    background-color: #C1C1C1;
+    padding: calc(0.25em + 0.25vw) calc(0.2em + 0.2vw);
+    border-radius: 50%;
+    transition: 0.4s;
+
+}
+
+table tbody tr td ul.actions li a:hover{  
+    
+    background-color: black;
+
+
+}
+
+table tbody tr td ul.actions li a span{  
+    
+    color: white;
+    font-size: calc(0.45em + 0.45vw);
+
+}
+
+table tbody tr td ul li:nth-child(3) a span{  
+    
+    font-size: calc(0.36em + 0.36vw);
+
+}
+
+table tbody tr td ul li:nth-child(3) a{  
+    
+    padding: calc(0.25em + 0.25vw) calc(0.26em + 0.26vw);
+
+}
+
+
+
+
+/*
+table tbody tr td ul.actions {
+
+    Estilos aqui.
+
+}
+*/
+
+/*
+table tbody tr td ul.actions {
+
+    Estilos aquí.
+
+}
+*/
+  
+  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <!--- Header Superior -->
+        <div class="header-superior">
+            <div class="columna-izquierda">
+                <nav class="menu-auxiliar">
+                    <ul>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="columna-derecha">
+               <!-- Etiquetas aquí -->
+            </div>
+        </div>
+        <!--- Fin Header Superior -->
+        <div class="header-inferior">
+            <div class="columna-logo">
+                <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="">
+            </div>
+            <div class="columna-menu-principal">
+                <nav class="menu-principal">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Mi Perfil</a></li>
+                        <li><a href="#">Reporte Mensual</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="columna-acciones">
+                <!-- Codigo aquí -->
+            </div>
+            <div class="columna-usuario">
+                <div class="foto-usurio">
+                    <img src="{{ url_for('static', filename='img/Jhon Doe.png') }}" alt="">
+                </div>
+                <div class="nombre-usuario">
+                    <p>Jhon Doe or Jane Doe</p>
+                </div>
+                <div class="menu-usuario">
+                    <img src="{{ url_for('static', filename='Iconos/menu-puntos.svg') }}" alt="">
+                    <ul>
+                        <li><a href="/logout">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% block body %}
+        <h1>Esto es el layout</h1>
+    {% endblock %}
+</body>
+</html>

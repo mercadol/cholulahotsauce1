@@ -1,0 +1,295 @@
+header{
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+/* ---------------------------------------------------- */
+
+/* Contenedor Superior */
+
+.header-superior {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: calc(0.2em + 0.2vw) calc(3.56em + 3.56vw);
+    background-color: #C0101A;
+
+}
+
+/* Columna Izquierda */
+
+.header-superior > .columna-izquierda {
+
+    height: fit-content;
+    align-self: center;
+
+}
+
+.menu-auxiliar {
+
+    background-color: black;
+
+}
+
+.menu-auxiliar > ul {
+
+    list-style-type: none;
+
+}
+
+.menu-auxiliar > ul > li {
+
+    float: left;
+    margin-right: 4%;
+
+}
+
+.menu-auxiliar > ul > li > a {
+
+    display: block;
+    font-family: Klavika-light;
+    font-size: calc(0.33em + 0.33vw);
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+.menu-auxiliar > ul > li > a:hover {
+
+    text-decoration: underline;
+
+}
+
+/* Columna Derecha */
+
+.header-superior > .columna-derecha {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 8%;
+    justify-self: flex-end;
+    width: 10%;
+    height: fit-content;
+    /*background-color: orange;*/
+
+}
+
+.header-superior > .columna-derecha > div {
+
+    /*background-color: black;*/
+    width: fit-content;
+
+}
+
+.header-superior > .columna-derecha > div > img {
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Fin Contenedor Superior */
+
+/* ---------------------------------------------------- */
+
+/* Contenedor Inferior */
+
+.header-inferior {
+
+    display: grid;
+    grid-template-columns: 0.415fr 2fr 0.5fr 1fr;
+    column-gap: calc(1.8em + 1.8vw);
+    padding: calc(0.53em + 0.53vw) calc(3.56em + 3.56vw);
+    background-color: #E1131D;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px 0px;
+
+}
+
+/*
+.header-inferior > .logo {
+
+
+}
+*/
+
+.columna-logo {
+
+    align-self: center;
+    height: 90%;
+
+}
+
+.columna-logo > img {
+
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+
+/* Menu */
+
+.columna-menu-principal {
+
+    height: fit-content;
+    align-self: center;
+
+}
+
+.menu-principal > ul {
+
+    list-style-type: none;
+    height: fit-content;
+
+}
+
+.menu-principal > ul > li {
+
+    float: left;
+    margin-right: 8.5%;
+    border-radius: 4px;
+
+}
+
+.menu-principal > ul > li > a {
+
+    display: block;
+    font-family: NTF-Grand-Light;
+    font-size: calc(0.49em + 0.49vw);
+    color: white;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+/* Fin Menu */
+
+.columna-acciones {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5%;
+
+}
+
+.columna-acciones > div {
+
+    width: 50%;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
+
+}
+
+.columna-acciones > div > img {
+
+    width: 100%;
+
+}
+
+.columna-usuario {
+
+    display: grid;
+    grid-template-columns: 0.56fr 1.5fr 0.3fr;
+    column-gap: 6%;
+    position: relative;
+    /*background-color: purple;*/
+
+}
+
+.columna-usuario > .foto-usurio {
+
+    height: fit-content;
+    align-self: center;
+    /*background-color: yellow;*/
+
+}
+
+.columna-usuario > .foto-usurio > img {
+
+    width: 100%;
+    display: block;
+    border: 4px solid #FFFFFF;
+    border-radius: 50%;
+
+}
+
+.columna-usuario > .nombre-usuario {
+
+    height: fit-content;
+    align-self: center;
+    overflow-x: hidden;
+    /*background-color: blue;*/
+
+}
+
+.columna-usuario > .nombre-usuario > p {
+
+    font-family: Klavika-light;
+    font-size: calc(0.41em + 0.41vw);
+    color: #FFFFFF;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.columna-usuario > .menu-usuario {
+
+    width: fit-content;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
+    /*background-color: green;*/
+    transition: 0.4s;
+
+}
+
+.columna-usuario > .menu-usuario > img {
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+}
+
+.columna-usuario > .menu-usuario:hover > ul {
+
+    display: block;
+    width: 100%;
+    padding: 4.5% 6%;
+    border: 1px solid #C7C7C7;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    list-style-type: none;
+    background-color: white;
+
+}
+
+.columna-usuario > .menu-usuario > ul {
+
+    top: 110%;
+    left: 0;
+    position: absolute;
+    display: none;
+
+}
+
+.columna-usuario > .menu-usuario > ul > li > a {
+
+    font-family: Klavika-light;
+    font-size: calc(0.41em + 0.41vw);
+    color: #8f8f8f;
+    text-decoration: none;
+
+}
+
+/* Fin Contenedor Inferior */
+
+/* ---------------------------------------------------- */

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css') }}">
+</head>
+
+<body>
+    
+    <div class="login-box">
+        
+        <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" alt="Logo Cholula Hot Sauce" width="58%">
+        
+        <form method="POST" action="/login">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+            <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña">
+
+            <select name="Cargo" id="cargo">
+                <option value="Cargo">Cargo</option>
+                <option value="Gerente">Gerente</option>
+                <option value="Contador">Contador</option>
+                <option value="Jefe de Mercadeo">Jefe de Mercadeo</option>
+                <option value="Secretaria">Secretaria</option>
+            </select>
+            
+            <input type="submit" value="Iniciar Sesión">
+
+            <div class="recordar">
+                <input type="checkbox" name="recordarme" id="recordarme">
+                <label for="recordarme">Recordarme</label>
+            </div>
+
+            <a href="#">¿Olvidaste tu contraseña?</a>
+
+        </form>
+
+        <div class="logos">
+            <img src="{{ url_for('static', filename='img/logoFb.png') }}" alt="Logo Facebook" width="6%">
+            <img src="{{ url_for('static', filename='img/logoTw.png') }}" alt="Logo Twitter" width="6%">
+            <img src="{{ url_for('static', filename='img/logoIg.png') }}" alt="Logo ig" width="6%">
+            <img src="{{ url_for('static', filename='img/logoYt.png') }}" alt="Logo YouTube" width="6%">
+            <br>
+            <a href="#">Web</a>
+            <a href="#">Soporte</a>
+            <a href="#">Contacto</a>
+        </div>
+
+    </div>  
+
+</body>
+</html>

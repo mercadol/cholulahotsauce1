@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block title %}Editar Empleado{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="descripcion-pagina">
+            <div>
+                <h1>Editar Datos</h1>
+            </div>
+            <div>
+                <p>Edite los datos del empleado seleccionado previamente.</p>
+            </div>
+        </div>
+        <div class="contenido-pagina">
+            <div class="contenedor-agregar-empleado">
+                <div class="columna-izquierda">
+                    <div class="agregar-foto-usuario">
+                        <label for="agregar-foto-establecimiento" class="custom-file-upload"><img src="{{ url_for('static', filename='/img/Jhon Doe.png') }}" alt=""></span></label>
+                        <input id="agregar-foto-establecimiento" type="file"/>
+                    </div>
+                    <div>
+                        <p>Haga clic en el circulo, para cambiar la foto de perfil del empleado.</p>
+                    </div>
+                </div>
+                <div class="columna-derecha">
+                    <div>
+                        <input type="text" name="nombre" placeholder="Jhon">
+                        <input type="text" name="apellidos" placeholder="Doe">
+                        <select name="genero" id="genero">
+                            <option disabled selected>Genero</option>
+                            <option value="Masculino" selected>Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" name="fecha-nacimiento" placeholder="01/08/1976">
+                        <input type="text" name="cedula" placeholder="1088456865">
+                        <input type="text" name="direccion" placeholder="Calle Falsa 123">
+                    </div>
+                    <div>
+                        <input type="text" name="telefono" placeholder="3270024">
+                        <input type="text" name="celular" placeholder="3108390717">
+                        <input type="text" name="correo" placeholder="JhonDoe@gmail.com">
+                    </div>
+                    <div>
+                        <input type="text" name="correo-institucional" placeholder="JhonDoe@cholulahotsauce.com">
+                        <input type="text" name="fecha-vinculacion" placeholder="02/02/1994">
+                        <input type="text" name="fecha-desvinculacion" placeholder="-">
+                    </div>
+                    <div>
+                        <select name="tipo-contrato" id="tipo-contrato">
+                            <option disabled selected>Tipo de Contrato</option>
+                            <option value="Termino Indefinido" selected>Termino Indefinido</option>
+                            <option value="Temporal">Temporal</option>
+                            <option value="Obra y Labor">Obra y Labor</option>
+                            <option value="Prestacion y Servicio">Prestacion y Servicio</option>
+                        </select>
+                        <select name="Dependencia" id="Dependencia">
+                            <option disabled selected>Dependencia</option>
+                            <option value="Gerencia" selected>Gerencia</option>
+                            <option value="Recursos Humanos">Recursos Humanos</option>
+                            <option value="Mercadeo">Mercadeo</option>
+                        </select>
+                        <select name="Cargo" id="Cargo">
+                            <option disabled selected>Cargo</option>
+                            <option value="Gerente" selected>Gerente General</option>
+                            <option value="Contador">Contador</option>
+                            <option value="Jefe de Mercadeo">Jefe de Mercadeo</option>
+                            <option value="Secretaria">Secretaria</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" name="salario" placeholder="COP 50.000.000">
+                        <input type="text" name="facebook" placeholder="Jhon Doe">
+                        <input type="text" name="twitter" placeholder="@Jhon_Doe">
+                    </div>
+                    <div>
+                        <input type="text" name="instagram" placeholder="jhonDoe76">
+                    </div>
+                    <div class="boton-agregar-empleado">
+                        <input type="button" value="Guardar Cambios">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+

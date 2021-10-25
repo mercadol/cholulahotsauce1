@@ -1,0 +1,61 @@
+.contenedor-agregar-empleado {
+
+    display: grid;
+    grid-template-columns: 0.12fr 1fr;
+    column-gap: 5%;
+    padding: calc(1.4em + 1.4vw) calc(3.56em + 3.56vw);
+
+}
+
+.contenedor-agregar-empleado > .columna-izquierda {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: calc(0.7em + 0.7vw);
+    height: fit-content;
+  
+}
+
+.agregar-foto-usuario {
+
+    width: fit-content;
+    justify-self: center;
+    padding: 40% 38%;
+    border-radius: 50%;
+    border: 3px solid #D3D3D3;
+
+}
+
+.contenedor-agregar-empleado > .columna-izquierda > div > p {
+
+    font-family: Klavika-light;
+    font-size: calc(0.35em + 0.35vw);
+    color: #B8B8B8;
+    text-align: justify;
+  
+}
+
+.contenedor-agregar-empleado > .columna-derecha {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: calc(2em + 2vw);
+  
+}
+
+.contenedor-agregar-empleado > .columna-derecha > div {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5%;
+  
+}
+
+.contenedor-agregar-empleado > .columna-derecha > .boton-agregar-empleado {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 30%;
+    justify-self: center;
+  
+}

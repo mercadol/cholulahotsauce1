@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block title %}Perfil Empleado{% endblock %}
+
+{% block body %}
+
+    <main>
+        <div class="descripcion-pagina">
+            <div>
+                <h1>Mi Perfil</h1>
+            </div>
+            <div>
+                <p>Visualice sus datos personales</p>
+            </div>
+        </div>
+        <div class="contenido-pagina">
+            <div class="contenedor-perfil-empleado">
+                <div class="fila-1">
+                    <div>
+                        <img src="./img/Jhon Doe.png" alt="">
+                    </div>
+                    <div>
+                        <h1>Jhon Doe</h1>
+                    </div>
+                    <div>
+                        <p>Gerente General</p>
+                    </div>
+                    <div>
+                        <a href="https://facebook.com/"><span class="icon-facebook-rect"></span></a>
+                        <a href="https://twitter.com/"><span class="icon-twitter-1"></span></a>
+                        <a href="https://www.instagram.com/"><span class="icon-instagram-3"></span></a>
+                    </div>
+                </div>
+                <div class="fila-2">
+                    <div data-tip="Genero">
+                        <input type="text" name="genero" value="Masculino" disabled>
+                    </div>
+                    <div data-tip="Edad">
+                        <input type="text" name="edad" value="45" disabled>
+                    </div>
+                    <div data-tip="Numero de Documento">
+                        <input type="text" name="numero-documento" value="1088456865" disabled>
+                    </div>
+                    <div data-tip="Dirección">
+                        <input type="text" name="direccion" value="Calle Falsa 123" disabled>
+                    </div>
+                    <div data-tip="Teléfono">
+                        <input type="text" name="telefono" value="3270024" disabled>
+                    </div>
+                    <div data-tip="Celular">
+                        <input type="text" name="celular" value="3108390717" disabled>
+                    </div>
+                    <div data-tip="Correo Electrónico">
+                        <input type="text" name="correo" value="JhonDoe@gmail.com" disabled>
+                    </div>
+                    <div data-tip="Correo Institucional">
+                        <input type="text" name="correo" value="JhonDoe@cholulahotsauce.com" disabled>
+                    </div>
+                    <div data-tip="Fecha de Vinculación">
+                        <input type="text" name="fecha-vinculacion" value="02/02/1994" disabled>
+                    </div>
+                    <div data-tip="Tipo de Contrato">
+                        <input type="text" name="tipo-contrato" value="Termino Indefinido" disabled>
+                    </div>
+                    <div data-tip="Cargo">
+                        <input type="text" name="dependencia" value="Gerencia" disabled>
+                    </div>
+                    <div data-tip="Salario">
+                        <input type="text" name="Salario" value="COP 50.000.000" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+    

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block title %}Agregar Empleado{% endblock %}
+{% block menu %}
+<p>aquí va mi nievo menu.</p>
+{% endblock %}
+{% block body %}
+
+    <main>
+        <div class="descripcion-pagina">
+            <div>
+                <h1>Agregar Empleado</h1>
+            </div>
+            <div>
+                <p>Agregue un nuevo empleado.</p>
+            </div>
+        </div>
+        <div class="contenido-pagina">
+            <div class="contenedor-agregar-empleado">
+                <div>
+                    <div class="agregar-foto-usuario">
+                        <label for="agregar-foto-establecimiento" class="custom-file-upload"><img src="{{ url_for('static', filename='/img/usuario.png') }}" alt=""></span></label>
+                        <input id="agregar-foto-establecimiento" type="file"/>
+                    </div>
+                    <div>
+                        <p>Haga clic en el circulo, para agregar la foto de perfil del empleado.</p>
+                    </div>
+                </div>
+                <div>
+                    <form method="POST" action="/agregar">
+                        <div>
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                            <input type="text" name="cedula" id="cedula" placeholder="cedula">
+                        </div>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Password">
+                            <select name="genero" id="genero">
+                                <option disabled selected>Genero</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
+                            <input type="text" name="direccion" id="direccion" placeholder="Direccion">
+                        </div>
+                        <div>
+                            <input type="text" name="telefono" id="telefono" placeholder="Telefono">
+                            <input type="text" name="celular" id="celular" placeholder="Celular">
+                            <input type="text" name="correo" id="correo" placeholder="Correo">
+                        </div>
+                        <div>
+                            <input type="text" name="correo-institucional" id="correoInstitucional" placeholder="Correo Institucional">
+                            <select name="tipo-contrato" id="tipoContrato">
+                                <option disabled selected>Tipo de Contrato</option>
+                                <option value="Termino Indefinido">Termino Indefinido</option>
+                                <option value="Temporal">Temporal</option>
+                                <option value="Obra y Labor">Obra y Labor</option>
+                                <option value="Prestacion y Servicio">Prestacion y Servicio</option>
+                            </select>
+                            <select name="Dependencia" id="dependencia">
+                                <option disabled selected>Dependencia</option>
+                                <option value="Gerencia">Gerencia</option>
+                                <option value="Recursos Humanos">Recursos Humanos</option>
+                                <option value="Mercadeo">Mercadeo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select name="Cargo" id="Cargo">
+                                <option disabled selected>Cargo</option>
+                                <option value="Gerente">Gerente</option>
+                                <option value="Contador">Contador</option>
+                                <option value="Jefe de Mercadeo">Jefe de Mercadeo</option>
+                                <option value="Secretaria">Secretaria</option>
+                            </select>
+                            <input type="text" name="salario" placeholder="Salario">
+                        </div>
+                        <div>
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <input type="submit" value="Agregar">
+                        </div>
+                        
+                    </form>
+                    
+                </div>   
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
+

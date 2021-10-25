@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2021 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="mail" unicode="&#xe800;" d="M0 28v644q0 8 2 18l460-460q39-39 95-39 55 0 94 39l460 460q2-9 2-18v-644q0-37-26-62t-62-26h-937q-36 0-62 26t-26 62z m63 728q13 4 25 4h937q12 0 25-4l-463-463q-13-12-31-12t-30 12z" horiz-adv-x="1113.3" />
+
+<glyph glyph-name="notificacion-4" unicode="&#xe804;" d="M508 725c-31 0-56-25-56-56v-26c-97-25-169-113-169-218v-225l-75-75v-37h600v37l-75 75v225c0 105-71 193-168 218v26c0 31-26 56-57 56z m-75-675c0-41 34-75 75-75s75 34 75 75h-150z" horiz-adv-x="1000" />
+
+<glyph glyph-name="lupa-3" unicode="&#xe807;" d="M151 225a335 335 0 0 1 443-27l221-222a42 42 0 0 1 59 59l-222 222a335 335 0 0 1-501 442 335 335 0 0 1 0-474z m59 415a252 252 0 1 0-74-178 250 250 0 0 0 74 178z" horiz-adv-x="1000" />
+
+<glyph glyph-name="mensaje-3" unicode="&#xe80a;" d="M986 694c-14 21-37 34-64 34h-844c-26 0-49-13-63-33l487-406 484 405z m-986-68v-576c0-43 35-78 78-78h844c43 0 78 35 78 78v574l-498-416-502 418z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>
