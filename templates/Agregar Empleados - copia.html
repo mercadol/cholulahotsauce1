@@ -28,29 +28,34 @@
                 <div>
                     <form method="POST" action="/agregar">
                         <div>
-                            <input type="text" name="nombre" placeholder="Nombre">
-                            <input type="text" name="apellidos" placeholder="Apellidos">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                            <input type="text" name="cedula" id="cedula" placeholder="cedula">
+                        </div>
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Password">
                             <select name="genero" id="genero">
                                 <option disabled selected>Genero</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Femenino">Femenino</option>
                             </select>
+                            <input type="text" name="direccion" id="direccion" placeholder="Direccion">
                         </div>
                         <div>
-                            <input type="text" name="telefono" placeholder="Telefono">
-                            <input type="text" name="celular" placeholder="Celular">
-                            <input type="text" name="correo" placeholder="Correo">
+                            <input type="text" name="telefono" id="telefono" placeholder="Telefono">
+                            <input type="text" name="celular" id="celular" placeholder="Celular">
+                            <input type="text" name="correo" id="correo" placeholder="Correo">
                         </div>
                         <div>
-                            <input type="text" name="correo-institucional" placeholder="Correo Institucional">
-                            <select name="tipo-contrato" id="tipo-contrato">
+                            <input type="text" name="correo_Institucional" id="correo_Institucional" placeholder="Correo Institucional">
+                            <select name="idContrato" id="idContrato">
                                 <option disabled selected>Tipo de Contrato</option>
                                 <option value="Termino Indefinido">Termino Indefinido</option>
                                 <option value="Temporal">Temporal</option>
                                 <option value="Obra y Labor">Obra y Labor</option>
                                 <option value="Prestacion y Servicio">Prestacion y Servicio</option>
                             </select>
-                            <select name="Dependencia" id="Dependencia">
+                            <select name="idDependencia" id="idDependencia">
                                 <option disabled selected>Dependencia</option>
                                 <option value="Gerencia">Gerencia</option>
                                 <option value="Recursos Humanos">Recursos Humanos</option>
@@ -58,24 +63,28 @@
                             </select>
                         </div>
                         <div>
-                            <select name="Cargo" id="Cargo">
+                            <select name="Cargo" id="cargo">
                                 <option disabled selected>Cargo</option>
-                                <option value="Gerente">Gerente</option>
-                                <option value="Contador">Contador</option>
-                                <option value="Jefe de Mercadeo">Jefe de Mercadeo</option>
-                                <option value="Secretaria">Secretaria</option>
+                                <option value="1">Director ejecutivo CEO</option>
+                                <option value="2">Gerente financiero</option>
+                                <option value="3">Jefe de Mercadeo</option>
+                                <option value="4">Secretaria</option>
                             </select>
-                            <input type="text" name="salario" placeholder="Salario">
-                            <input type="text" name="facebook" placeholder="Facebook">
+                            <select name="idRol" id="idRol">
+                                <option disabled selected>Rol</option>
+                                <option value="1">Super admin</option>
+                                <option value="2">Administrador</option>
+                                <option value="3">Empleado</option>
+                            </select>
+                            <input type="text" name="salario" id="salario" placeholder="Salario">
                         </div>
                         <div>
-                            <input type="text" name="twitter" placeholder="Twitter">
-                            <input type="text" name="instagram" placeholder="Instagram">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <input type="submit" value="Agregar"> 
                         </div>
-                        <div>
-                            <input type="submit" value="Agregar">
-                        </div>
+                        
                     </form>
+                    
                 </div>   
             </div>
         </div>

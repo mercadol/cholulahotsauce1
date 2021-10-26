@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for, session
 from database import usuarios
 from config import DevelopmentConfig
-from models import db, Empleado
+from models import db, Empleado, Contrato
 from flask_wtf.csrf import CSRFProtect
 
 
@@ -111,42 +111,51 @@ def base():
     else:
         return "No tiene permisos. Debe iniciar sesion"
 
+@app.route('/contratos', methods=['GET', 'POST'])
+def contratos():
+    if request.method=='POST':
+        contrato = Contrato( nombreContrato= request.json['nombre'])
+        db.session.add(contrato)
+        db.session.commit()
+        return jsonify({"mesage":"contrato registrado"})
+    else:
+        return jsonify({"mesage": Contrato.query.all()})
+
 @app.route('/agregar', methods=['GET', 'POST'])
 def agregarEmpleado():
     if 'user' in session:
         if request.method=='POST':
 
-            usuario= Empleado(nombre=request.form['nombre'],
-                            apellidos=request.form['apellidos'],
-                            cedula=request.form['cedula'],
-                            password=request.form['password'],
-                            Genero=request.form['genero'],
-                            direccion=request.form['direccion'],
-                            telefono=request.form['telefono'],
-                            celular=request.form['celular'],
-                            correo=request.form['correo'],
-                            correoInstitucional=request.form['correoInstitucional'],
-                            idContrato=request.form['tipoContrato'],
-                            fechaInicioContrato=request.form['correo'],
-                            fechaFinContrato=request.form['correo'],
-                            salario=request.form['salario'],
-                            idRol=request.form['idRol'],
-                            idDependencia=request.form['dependencia'])
+            usuario= Empleado(
+                nombre=request.form['nombre'],
+                apellidos=request.form['apellidos'],
+                cedula=request.form['cedula'],
+                password=request.form['password'],
+                Genero=request.form['genero'],
+                direccion=request.form['direccion'],
+                telefono=request.form['telefono'],
+                celular=request.form['celular'],
+                correo=request.form['correo'],
+                correoInstitucional=request.form['correo_Institucional'],
+                idContrato=request.form['idContrato'],
+                fechaInicioContrato=request.form['correo'],
+                fechaFinContrato=request.form['correo'],
+                salario=request.form['salario'],
+                idRol=request.form['idRol'],
+                idDependencia=request.form['idDependencia'])
             
             db.session.add(usuario)
             db.session.commit()
 
             return "Empleado Registrado"
-
+        else:
+            print("hola")
+            print(Empleado.query.all())
+            print(Contrato.query.all())
         return render_template('Agregar Empleados.html')
     else:
         return "No tiene permisos. Debe iniciar sesion"
 
-
-#LOGIN PAGE
-#@app.route('/login', methods=['POST', 'GET'])
-#def login():
-    #pass
 
 
 
