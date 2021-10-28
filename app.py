@@ -1,13 +1,13 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for, session
 from database import usuarios
 from config import DevelopmentConfig
-from models import db, Empleado, Contrato
+from models import Rol, db, Empleado, Contrato
 from flask_wtf.csrf import CSRFProtect
 
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
-app.config["SQLALCHEMY_DATABASE_URL"]="sqlite:///database/colula.db"
+app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///database/cholula.db"
 csrf= CSRFProtect()
 
 @app.errorhandler(404)
@@ -112,14 +112,15 @@ def base():
         return "No tiene permisos. Debe iniciar sesion"
 
 @app.route('/contratos', methods=['GET', 'POST'])
-def contratos():
+def gestionarContratos():
     if request.method=='POST':
-        contrato = Contrato( nombreContrato= request.json['nombre'])
+        contrato = Contrato( Nombre_Contrato= request.json['Nombre_Contrato'])
         db.session.add(contrato)
-        db.session.commit()
+        print (db.session.commit())
         return jsonify({"mesage":"contrato registrado"})
     else:
-        return jsonify({"mesage": Contrato.query.all()})
+        contratos = Contrato.query.all()
+        return contratos
 
 @app.route('/agregar', methods=['GET', 'POST'])
 def agregarEmpleado():
@@ -141,25 +142,17 @@ def agregarEmpleado():
                 fechaInicioContrato=request.form['correo'],
                 fechaFinContrato=request.form['correo'],
                 salario=request.form['salario'],
-                idRol=request.form['idRol'],
-                idDependencia=request.form['idDependencia'])
+                idRol=request.form['idRol'])
             
             db.session.add(usuario)
             db.session.commit()
 
             return "Empleado Registrado"
-        else:
-            print("hola")
-            print(Empleado.query.all())
-            print(Contrato.query.all())
-        return render_template('Agregar Empleados.html')
+        contratos = Contrato.query.all()
+        
+        return render_template('Agregar Empleados.html', contratos=contratos)
     else:
         return "No tiene permisos. Debe iniciar sesion"
-
-
-
-
-
 
 
 

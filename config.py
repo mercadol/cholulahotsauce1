@@ -6,5 +6,5 @@ class Config(object):
 
 class DevelopmentConfig(Config):
     DEBUG =True
-    SQLALCHEMY_DATABAS_URI = 'sqlite:///database/colula.db'
+    #SQLALCHEMY_DATABAS_URI = 'sqlite:///database\cholula.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

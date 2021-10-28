@@ -5,8 +5,8 @@ db=SQLAlchemy()
 
 class Empleado(db.Model):
     __tablename__ = 'Usuario'
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String)
+    Id_Usuario = db.Column(db.Integer, primary_key=True)
+    Nombre = db.Column(db.String)
     apellidos = db.Column(db.String)
     cedula = db.Column(db.Integer, nullable=False)
     password = db.Column(db.String(66))
@@ -15,12 +15,12 @@ class Empleado(db.Model):
     telefono = db.Column(db.Integer)
     celular = db.Column(db.Integer)
     correo = db.Column(db.String(50))
-    correoInstitucional = db.Column(db.String(50))
-    idContrato = db.Column(db.Integer, nullable=False)
-    fechaInicioContrato = db.Column(db.DateTime)
-    fechaFinContrato = db.Column(db.DateTime)
-    idRol = db.Column(db.Integer, nullable=False) #llave foranea
-    idDependencia = db.Column(db.Integer, nullable=False) #llave foranea
+    Correo_Institucional = db.Column(db.String(50))
+    ID_Contrato = db.Column(db.Integer, nullable=False)
+    Fecha_Inicio_Contrato = db.Column(db.DateTime)
+    Fecha_Fin_Contrato = db.Column(db.DateTime)
+    ID_Rol = db.Column(db.Integer, nullable=False) #llave foranea
+    ID_Dependencia = db.Column(db.Integer, nullable=False) #llave foranea
     salario = db.Column(db.Integer)
 
     def __init__(
@@ -69,30 +69,33 @@ class Empleado(db.Model):
 
 class Contrato(db.Model):
     __tablename__ = 'Contrato'
-    id = db.Column(db.Integer, primary_key=True)
-    nombreContrato = db.Column(db.String)
+    ID_Contrato = db.Column('ID_Contrato', db.Integer, primary_key=True)
+    Nombre_Contrato = db.Column('Nombre_Contrato',db.String)
 
-    def __init__(self, nombreContrato):
-        self.nombreContrato=nombreContrato
+    def __init__(self, Nombre_Contrato):
+        self.Nombre_Contrato=Nombre_Contrato
     
     def __repr__(self):
-        return f'Empleado({self.nombreContrato})'
+        return f'Empleado({self.Nombre_Contrato})'
         
     def __str__(self):
-        return self.id
+        return self.ID_Contrato
 
-class Dependencia(db.Model):
-    __tablename__ = 'Dependencia'
-    id = db.Column(db.Integer, primary_key=True)
-    nombreDependencia = db.Column(db.String)
+class Rol(db.Model):
+    __tablename__ = 'Rol'
+    id = db.Column('ID_Contrato', db.Integer, primary_key=True)
+    nombre = db.Column('Nombre_Rol',db.String(20))
+    descripcion = db.Column('Descripcion_Rol',db.String(100))
 
-    def __init__(self, id, nombreDependencia):
-        self.id = id
-        self.nombreDependencia=nombreDependencia
+    def __init__(self, Nombre_Contrato):
+        self.Nombre_Contrato=Nombre_Contrato
     
     def __repr__(self):
-        return f'Empleado({self.nombreDependencia})'
+        return f'Empleado({self.Nombre_Contrato})'
+        
     def __str__(self):
-        return self.id
+        return self.ID_Contrato
+
+
 
 

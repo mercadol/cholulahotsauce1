@@ -105,8 +105,8 @@ header{
     column-gap: calc(1.8em + 1.8vw);
     padding: calc(0.53em + 0.53vw) calc(3.56em + 3.56vw);
     background-color: #E1131D;
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px 0px;
-
+    border-bottom: 1px solid #A80E15;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 5px 0px;
 }
 
 /*
@@ -274,7 +274,7 @@ header{
 
 .columna-usuario > .menu-usuario > ul {
 
-    top: 110%;
+    top: 70%;
     left: 0;
     position: absolute;
     display: none;
