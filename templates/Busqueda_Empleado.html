@@ -40,7 +40,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            {% for empleado in empleados %}
+                            <tr>
+                                <td>{{ empleado.Id_Usuario }}</td>
+                                <td>{{ empleado.Nombre }}</td>
+                                <td>{{ empleado.apellidos }}</td>
+                                <td>{{ empleado.cedula }}</td>
+                                <td>{{ empleado.Correo_Institucional }}</td>
+                                <td>{{ empleado.idDependencia }}</td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

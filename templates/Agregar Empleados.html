@@ -1,8 +1,6 @@
 {% extends "layout.html" %}
 {% block title %}Agregar Empleado{% endblock %}
-{% block menu %}
-<p>aquí va mi nievo menu.</p>
-{% endblock %}
+
 {% block body %}
 
     <main>
@@ -16,6 +14,7 @@
         </div>
         <div class="contenido-pagina">
             <div class="contenedor-agregar-empleado">
+
                 <div>
                     <div class="agregar-foto-usuario">
                         <label for="agregar-foto-establecimiento" class="custom-file-upload"><img src="{{ url_for('static', filename='/img/usuario.png') }}" alt=""></span></label>
@@ -48,28 +47,33 @@
                         </div>
                         <div>
                             <input type="text" name="correo_Institucional" id="correo_Institucional" placeholder="Correo Institucional">
-                            <select name="idContrato">
+                            <select name="idContrato" id="idContrato">
                                 <option disabled selected>Tipo de Contrato</option>
                                 {% for contrato in contratos %}
                                 <option value="{{ contrato.ID_Contrato }}" >{{ contrato.Nombre_Contrato }}</option>
                                 {% endfor %}
                             </select>
-                            <select name="Cargo" id="cargo">
-                                <option disabled selected>Cargo</option>
-                                <option value="1">Director ejecutivo CEO</option>
-                                <option value="2">Gerente financiero</option>
-                                <option value="3">Jefe de Mercadeo</option>
-                                <option value="4">Secretaria</option>
+                            <select name="idRol" id="idRol">
+                                <option disabled selected>Rol</option>
+                                {% for rol in roles %}
+                                <option value="{{ rol.id }}" >{{ rol.nombre }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div>
-                            <select name="idRol" id="idRol">
-                                <option disabled selected>Rol</option>
-                                <option value="1">Super admin</option>
-                                <option value="2">Administrador</option>
-                                <option value="3">Empleado</option>
+                            <select name="idDependencia">
+                                <option disabled selected>Dependencia</option>
+                                {% for dependencia in dependencias %}
+                                <option value="{{ dependencia.id }} " >{{ dependencia.nombre }} </option>
+                                {% endfor %}
                             </select>
-                            <input type="text" name="salario" id="salario" placeholder="Salario">
+                            <input type="text" name="salario" placeholder="Salario">
+                        </div>
+                        <div>
+                            <input type="date" name="fechaInicioContrato"
+                            value="2018-07-22" min="2018-01-01" max="2023-12-31">
+                            <input type="date" name="fechaFinContrato"
+                            value="2018-07-22" min="2018-01-01" max="2023-12-31">
                         </div>
                         <div>
                             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">

@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request, render_template, redirect, url_for, session
-from database import usuarios
 from config import DevelopmentConfig
-from models import Rol, db, Empleado, Contrato
+from models import Dependencia, Rol, db, Empleado, Contrato
 from flask_wtf.csrf import CSRFProtect
 
 
@@ -10,59 +9,25 @@ app.config.from_object(DevelopmentConfig)
 app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///database/cholula.db"
 csrf= CSRFProtect()
 
+
+
 @app.errorhandler(404)
 def pageNotFound(e):
     print (e)
     return render_template('404.html')
-    
 
-
-@app.route('/api/usuario', methods=['POST'])
-def add_usuario():
-    Id_Usuario = request.json['Id_Usuario'],
-    Correo=request.json['Correo'],
-    Nombre=request.json['Nombre'],
-    Apellido=request.json['Apellido'],
-    Cedula=request.json['Cedula'],
-    Genero=request.json['Genero'],
-    Fecha_ingreso=request.json['Fecha_ingreso'],
-    Direccion=request.json['Direccion'],
-    Tipo_contrato=request.json['Tipo_contrato'],
-    Id_Rol=request.json['Id_Rol'],
-    Id_Cargo=request.json['Id_Cargo']
-    
-    data = (
-        Id_Usuario,
-        Correo,
-        Nombre,
-        Apellido,
-        Cedula,
-        Genero,
-        Fecha_ingreso,
-        Direccion,
-        Tipo_contrato,
-        Id_Rol,
-        Id_Cargo
-    )
-    
-    usuario_id = usuarios.insert_usuario(data)
-    
-    if usuario_id:
-        return jsonify({"message": "usuario created"})
-
-@app.route('/api/usuarios')
-def getUsuarios():
-    return jsonify(usuarios)
 
 @app.route('/')
 def index():
     return render_template('login.html')
 
 #default home page
-@app.route('/editar')
-def editarEmpleado():
+@app.route('/busqueda/<int:id>')
+@app.route('/editar/<int:id>')
+def editarEmpleado(id):
     if 'user' in session:
-        return render_template('Editar Empleado.html')
+        user = Empleado.query.filter_by(Id_Usuario=id).first()
+        return render_template('Editar Empleado.html',user=user)
     else:
         return "No tiene permisos. Debe iniciar sesion"
 
@@ -100,7 +65,7 @@ def generarReporte():
 @app.route('/busqueda')
 def busquedaEmpleado():
     if 'user' in session:
-        return render_template('Busqueda_Empleado.html')
+        return render_template('Busqueda_Empleado.html', empleados = Empleado.query.all())
     else:
         return "No tiene permisos. Debe iniciar sesion"
 
@@ -142,6 +107,7 @@ def agregarEmpleado():
                 fechaInicioContrato=request.form['correo'],
                 fechaFinContrato=request.form['correo'],
                 salario=request.form['salario'],
+                idDependencia=request.form['idDependencia'],
                 idRol=request.form['idRol'])
             
             db.session.add(usuario)
@@ -149,11 +115,11 @@ def agregarEmpleado():
 
             return "Empleado Registrado"
         contratos = Contrato.query.all()
-        
-        return render_template('Agregar Empleados.html', contratos=contratos)
+        roles= Rol.query.all()
+        dependencias=Dependencia.query.all()
+        return render_template('Agregar Empleados.html', contratos=contratos, roles=roles,dependencias=dependencias)
     else:
         return "No tiene permisos. Debe iniciar sesion"
-
 
 
 

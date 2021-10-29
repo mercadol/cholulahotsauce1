@@ -1,7 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
 db=SQLAlchemy()
-#from sqlalchemy import Column, Integer, String, Float
 
 class Empleado(db.Model):
     __tablename__ = 'Usuario'
@@ -16,31 +15,22 @@ class Empleado(db.Model):
     celular = db.Column(db.Integer)
     correo = db.Column(db.String(50))
     Correo_Institucional = db.Column(db.String(50))
-    ID_Contrato = db.Column(db.Integer, nullable=False)
-    Fecha_Inicio_Contrato = db.Column(db.DateTime)
-    Fecha_Fin_Contrato = db.Column(db.DateTime)
-    ID_Rol = db.Column(db.Integer, nullable=False) #llave foranea
-    ID_Dependencia = db.Column(db.Integer, nullable=False) #llave foranea
+    idContrato = db.Column('ID_Contrato', db.Integer, nullable=False)
+    Fecha_Inicio_Contrato = db.Column(db.Date)
+    Fecha_Fin_Contrato = db.Column(db.Date)
+    idRol = db.Column('ID_Rol',db.Integer, nullable=False) #llave foranea
+    idDependencia = db.Column('ID_Dependencia', db.Integer, nullable=False) #llave foranea
     salario = db.Column(db.Integer)
 
     def __init__(
-            self,
-            nombre,
-            correo,
-            apellidos,
-            cedula,
-            password,
-            Genero,
-            direccion,
-            telefono,
-            celular,
-            correoInstitucional,
-            idContrato,
-            fechaInicioContrato,
-            fechaFinContrato,
-            idRol,
-            idDependencia,
-            salario
+            self, nombre, correo,
+            apellidos, cedula,
+            password, Genero,
+            direccion, telefono,
+            celular, correoInstitucional,
+            idContrato, fechaInicioContrato,
+            fechaFinContrato, idRol,
+            idDependencia, salario
         ):
         self.nombre = nombre
         self.correo = correo
@@ -83,18 +73,39 @@ class Contrato(db.Model):
 
 class Rol(db.Model):
     __tablename__ = 'Rol'
-    id = db.Column('ID_Contrato', db.Integer, primary_key=True)
+    id = db.Column('ID_Rol', db.Integer, primary_key=True)
     nombre = db.Column('Nombre_Rol',db.String(20))
     descripcion = db.Column('Descripcion_Rol',db.String(100))
 
-    def __init__(self, Nombre_Contrato):
-        self.Nombre_Contrato=Nombre_Contrato
-    
-    def __repr__(self):
-        return f'Empleado({self.Nombre_Contrato})'
+    def __init__(self, nombre):
+        self.nombre=nombre
         
     def __str__(self):
-        return self.ID_Contrato
+        return self.nombre
+
+class Dependencia(db.Model):
+    __tablename__ = 'Dependencia'
+    id = db.Column('ID_Dependencia', db.Integer, primary_key=True)
+    nombre = db.Column('Nombre_Dependencia',db.String(50))
+    def __init__(self, nombre):
+        self.nombre=nombre
+    def __str__(self):
+        return self.nombre
+
+
+class Cargo(db.Model):
+    __tablename__ = 'Cargo'
+    id = db.Column('ID_Cargo', db.Integer, primary_key=True)
+    nombre = db.Column('Nombre_Cargo',db.String(50))
+    salario = db.Column('Salario', db.Integer)
+    idDependencia = db.Column('ID_Dependencia', db.Integer, nullable=False )#db.ForeignKey(),
+
+    def __init__(self, nombre):
+        self.nombre=nombre
+    
+    def __str__(self):
+        return self.nombre
+    
 
 
 
