@@ -4,11 +4,14 @@ from models import Dependencia, Rol, db, Empleado, Contrato
 from flask_wtf.csrf import CSRFProtect
 
 
-app = Flask(__name__)
-app.config.from_object(DevelopmentConfig)
-app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///database/cholula.db"
 csrf= CSRFProtect()
+app = Flask(__name__)
+#app.config.from_object(DevelopmentConfig)
+app.config['SECRET_KEY'] = '84da5b8a39a6d06bf8bc7a60cedcac93'
 
+app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///database/cholula.db"
+#csrf= CSRFProtect()
+db.init_app(app)
 
 
 @app.errorhandler(404)
@@ -124,8 +127,8 @@ def agregarEmpleado():
 
 
 if __name__== '__main__':
-    csrf.init_app(app)
-    db.init_app(app)
+    #csrf.init_app(app)
+    #db.init_app(app)
 
     with app.app_context():
         db.create_all()
